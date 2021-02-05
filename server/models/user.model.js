@@ -31,11 +31,12 @@ class UserModel {
         return result[0];
     }
 
-    create = async ({ no_hp, nama, password, role = Role.User }) => {
+    create = async ({ username, password, name, email, role = Role.User }) => {
         const sql = `INSERT INTO ${this.tableName}
-        (username, password, first_name, last_name, email, role, age) VALUES (?,?,?,?,?,?,?)`;
-
-        const result = await query(sql, [username, password, first_name, last_name, email, role, age]);
+        (username, password, name, email, role) VALUES (?,?,?,?,?)`;
+// console.log(sql)
+        const result = await query(sql, [username, password, name, email, role]);
+        // console.log(result)
         const affectedRows = result ? result.affectedRows : 0;
 
         return affectedRows;
