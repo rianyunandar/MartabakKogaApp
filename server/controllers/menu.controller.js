@@ -20,7 +20,7 @@ class MenuController {
             throw new HttpException(404, 'Banner not found');
         }
 
-        res.send(bannerList + menuList);
+        res.send({bannerList,menuList});
     };
 
     getAllMenu = async (req, res, next) => {

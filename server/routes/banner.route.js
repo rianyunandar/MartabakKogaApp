@@ -13,3 +13,5 @@ router.get('/id/:id', auth(), awaitHandlerFactory(bannerController.getBannerById
 router.post('/', createBannerSchema, awaitHandlerFactory(bannerController.createBanner)); // localhost:3000/api/v1/banners
 router.patch('/id/:id', auth(Role.Admin), updateBannerSchema, awaitHandlerFactory(bannerController.updateBanner)); // localhost:3000/api/v1/banners/id/1 , using patch for partial update
 router.delete('/id/:id', auth(Role.Admin), awaitHandlerFactory(bannerController.deleteBanner)); // localhost:3000/api/v1/banners/id/1
+
+module.exports = router;

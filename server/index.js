@@ -5,7 +5,7 @@ const HttpException = require('./utils/HttpException.utils');
 const errorMiddleware = require('./middleware/error.middleware');
 const userRouter = require('./routes/user.route');
 const menuRouter = require('./routes/menu.route');
-const bannerRouter = require('./routes/user.route');
+const bannerRouter = require('./routes/banner.route');
 
 
 // Init express
