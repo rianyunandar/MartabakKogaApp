@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const bannerController = require('../controllers/banner.controller');
 const auth = require('../middleware/auth.middleware');
-const Role = require('../utils/bannerRoles.utils');
+const Role = require('../utils/userRoles.utils');
 const awaitHandlerFactory = require('../middleware/awaitHandlerFactory.middleware');
 
 const { createBannerSchema, updateBannerSchema} = require('../middleware/validators/bannerValidator.middleware');

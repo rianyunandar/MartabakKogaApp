@@ -2,7 +2,8 @@ const express = require('express');
 const router = express.Router();
 const menuController = require('../controllers/menu.controller');
 const auth = require('../middleware/auth.middleware');
-const Role = require('../utils/menuRoles.utils');
+const Role = require('../utils/userRoles.utils');
+
 const awaitHandlerFactory = require('../middleware/awaitHandlerFactory.middleware');
 
 const { createMenuSchema, updateMenuSchema} = require('../middleware/validators/menuValidator.middleware');
