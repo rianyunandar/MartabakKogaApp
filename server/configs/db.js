@@ -1,3 +1,4 @@
+
 const dotenv = require('dotenv');
 dotenv.config();
 const mysql2 = require('mysql2');
@@ -10,7 +11,7 @@ class DBConnection {
             password: process.env.DB_PASS,
             database: process.env.DB_DATABASE
         });
-
+        // console.log(require('dotenv').config())
         this.checkConnection();
     }
 
@@ -29,6 +30,8 @@ class DBConnection {
             }
             if (connection) {
                 connection.release();
+                console.log('Database  connected.');
+            
             }
             return
         });

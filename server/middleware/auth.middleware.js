@@ -7,16 +7,18 @@ dotenv.config();
 const auth = (...roles) => {
     return async function (req, res, next) {
         try {
-            const authHeader = req.headers.authorization;
+            // console.log(require('dotenv').config())
+            const authHeader = req.header("Authorization");
+            // console.log(authHeader)
             const bearer = 'Bearer ';
 
             if (!authHeader || !authHeader.startsWith(bearer)) {
                 throw new HttpException(401, 'Access denied. No credentials sent!');
             }
 
-            const token = authHeader.replace(bearer, '');
+            const token = req.header("Authorization").replace("Bearer ", "");
             const secretKey = process.env.SECRET_JWT || "";
-
+            // console.log(token)
             // Verify Token
             const decoded = jwt.verify(token, secretKey);
             const user = await UserModel.findOne({ id: decoded.user_id });
