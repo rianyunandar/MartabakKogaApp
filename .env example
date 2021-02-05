@@ -1,0 +1,6 @@
+DB_HOST= xxxxxx
+DB_USER= xxxx
+DB_PASS= xxxx
+DB_DATABASE= xxxx
+PORT=xxx
+SECRET_JWT=xxx
