@@ -2,10 +2,6 @@ const MenuModel = require('../models/menu.model');
 const BannerModel = require('../models/banner.model');
 const HttpException = require('../utils/HttpException.utils');
 const { validationResult } = require('express-validator');
-const bcrypt = require('bcryptjs');
-const jwt = require('jsonwebtoken');
-const dotenv = require('dotenv');
-dotenv.config();
 
 
 
