@@ -13,15 +13,7 @@ dotenv.config();
  *                              Banner Controller
  ******************************************************************************/
 class BannerController {
-    getAllBannerBanner = async (req, res, next) => {
-        let bannerList = await BannerModel.find();
-       
-        if (!bannerList.length) {
-            throw new HttpException(404, 'Banner not found');
-        }
-
-        res.send(bannerList);
-    };
+ 
 
     getAllBanner = async (req, res, next) => {
         let bannerList = await BannerModel.find();
